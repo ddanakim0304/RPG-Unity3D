@@ -5,10 +5,18 @@ using UnityEngine;
 public class Interactable : MonoBehaviour
 {
     public float size;
+
+    public Transform guideTransform;
     public Transform playerTransform;
 
-    void Update()
+    public void Update()
     {
-        float distance = Vector3.Distance(transform.position,playerTransform.position);
+        float distance = Vector3.Distance(guideTransform.position,playerTransform.position);
+    }
+
+    public void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(guideTransform.position, size);
     }
 }
