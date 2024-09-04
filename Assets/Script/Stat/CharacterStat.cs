@@ -22,7 +22,7 @@ public class CharacterStat : MonoBehaviour
         }
     }
 
-    void GetHit(int damage)
+    public void GetHit(int damage)
     {
         damage = Mathf.Clamp(damage, 0, maxHP);
         currentHP -= damage;
